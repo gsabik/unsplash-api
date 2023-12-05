@@ -1,5 +1,5 @@
-import "./globals.css";
 import NavBar from "./components/NavBar";
+import "./globals.css";
 
 export const metadata = {
   title: "Unsplash API",

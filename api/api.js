@@ -13,6 +13,7 @@ export const getPhotos = async() => {
 		url: image.urls.regular,
 		likes: image.likes,
 		user: image.user.name,
+		userImage: image.user.profile_image?.small
 	}))
 
 	return dataFormat;
