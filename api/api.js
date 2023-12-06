@@ -11,10 +11,30 @@ export const getPhotos = async() => {
 		description: image.description ?? "Description not available",
 		hoverDescription: image.alt_description,
 		url: image.urls.regular,
-		likes: image.likes,
 		user: image.user.name,
-		userImage: image.user.profile_image?.small
+		userImage: image.user.profile_image?.small,
 	}))
+
+	return dataFormat;
+}
+
+export const getPhotoById = async(id) => {
+	const response = await fetch(`${BASE_URL}/photos/${id}?client_id=${ACCESS_KEY}`);
+	const data = await response.json();
+
+	const dataFormat = {
+		id: data.id,
+		url: data.urls.regular,
+		date: data.created_at, 
+		location: data.location,
+		user: data.user.name,
+		userImage: data.user.profile_image?.small,
+		userLocation: data.user.location,
+		social: data.user.social.portfolio_url,
+		likes: data.lies,
+		tagsData: data.tags,
+		download: data.links.download,
+	};
 
 	return dataFormat;
 }
