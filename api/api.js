@@ -33,7 +33,7 @@ export const getPhotoById = async(id) => {
 		social: data.user.social.portfolio_url,
 		likes: data.lies,
 		tagsData: data.tags,
-		download: data.links.download,
+		download: data.links.download_location,
 	};
 
 	return dataFormat;

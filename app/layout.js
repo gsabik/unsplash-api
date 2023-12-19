@@ -1,3 +1,4 @@
+import { FavoritesProvider } from "@/context/FavoritesContext";
 import NavBar from "./components/NavBar";
 import "./globals.css";
 
@@ -10,10 +11,12 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="es">
       <body>
-				<NavBar/>
-				<main className="max-w-screen-xl mx-auto">
-					{children}
-				</main>
+				<FavoritesProvider>
+					<NavBar/>
+					<main className="max-w-screen-xl mx-auto">
+						{children}
+					</main>
+				</FavoritesProvider>
 			</body>
     </html>
   );

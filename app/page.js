@@ -1,3 +1,4 @@
+
 import { getPhotos } from "@/api/api";
 import ListOfPhotos from "./components/ListOfPhotos";
 
