@@ -1,6 +1,7 @@
 import { getPhotoById } from "@/api/api";
 import { MapPin, Calendar } from "feather-icons-react/build/IconComponents";
 import DownloadButton from "@/app/components/DownloadButton";
+import FavoritesButton from "@/app/components/FavoritesButton";
 
 const ImagePage = async({ params }) => {
 	const { id } = params;
@@ -29,7 +30,10 @@ const ImagePage = async({ params }) => {
 						/>
 						<p className="font-semibold pl-2">{user}</p>
 					</div>
-					<DownloadButton download={download}/>
+					<div className="flex flex-row space-x-2">
+						<DownloadButton download={download}/>
+						<FavoritesButton id={id}/>
+					</div>
 				</div>
 				<div className="flex justify-center">
 					<img alt="" className="w-[70rem]" src={url}/>
